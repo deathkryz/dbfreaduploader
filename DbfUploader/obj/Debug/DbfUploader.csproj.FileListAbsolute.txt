@@ -13,3 +13,17 @@ C:\Users\kitto\source\repos\DbfUploader\DbfUploader\bin\Debug\MySql.Data.xml
 C:\Users\kitto\source\repos\DbfUploader\DbfUploader\obj\Debug\DbfUploader.csproj.CopyComplete
 C:\Users\kitto\source\repos\DbfUploader\DbfUploader\obj\Debug\DbfUploader.frmWaitForm.resources
 C:\Users\kitto\source\repos\DbfUploader\DbfUploader\obj\Debug\DbfUploader.FibonacciForm.resources
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\bin\Debug\DbfUploader.exe.config
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\bin\Debug\DbfUploader.exe
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\bin\Debug\DbfUploader.pdb
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\bin\Debug\Google.Protobuf.dll
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\bin\Debug\MySql.Data.xml
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.csprojAssemblyReference.cache
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.FibonacciForm.resources
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.Form1.resources
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.frmWaitForm.resources
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.Properties.Resources.resources
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.csproj.GenerateResource.cache
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.csproj.CopyComplete
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.exe
+C:\Users\kitto\Source\Repos\dbfreaduploader\DbfUploader\obj\Debug\DbfUploader.pdb

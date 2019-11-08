@@ -36,58 +36,63 @@ namespace DbfUploader
         //    mySqlConnection = CreateConnection(server,port ,userID,pass, database);
         //}
 
-        public void CreateDb(string dataBaseName, string ip, string port, string user, string pass)
+        public void CreateDb(string dataBaseName)
         {
             Console.WriteLine("Enterint to the method were is Creating the fucking database");
             BuildSql builder = new BuildSql();
-            mySqlConnection = CreateConnectionToLocalhost(ip, port, user, pass);
-            if (InitSqlCommand(builder.CreateDataBase(dataBaseName)) == 1)
+            /*mySqlConnection = CreateConnectionToLocalhost(ip, port, user, pass);*/
+            System.IO.File.WriteAllText(@"C:\opt\createdb.sql", builder.CreateDataBase(dataBaseName));
+           /* if (InitSqlCommand(builder.CreateDataBase(dataBaseName)) == 1)
             {
                 MessageBox.Show("successfully created a database", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else {
                 MessageBox.Show("There was an error creating the database", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
 
         }
 
-        public void CreateTables(string ip, string port, string user, string pass, string dataBaseName, string path)
+        public void CreateTables(string dataBaseName, string path)
         {
             BuildSql builder = new BuildSql();
-            mySqlConnection = CreateConnection(ip, port, user, pass, dataBaseName);
-            if (InitSqlCommand(DbfConnection(path)) == 1)
+            /*mySqlConnection = CreateConnection(ip, port, user, pass, dataBaseName);*/
+            
+            System.IO.File.WriteAllText(@"C:\opt\"+ Path.GetFileName(path).Replace(".dbf", "").Replace(".DBF", "") +".sql", DbfConnection(path));
+            
+            /*if (InitSqlCommand(DbfConnection(path)) == 1)
             {
                 Console.WriteLine("successfully created a database");
             }
             else {
                 MessageBox.Show("Error creating table", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
             
         }
 
-        public void InsertData(string ip, string port, string user, string pass, string dataBaseName, string path)
+        public void InsertData(string dataBaseName, string path)
         {
             BuildSql builder = new BuildSql();
             //List<string> columnsName = new List<string>();
             List<string> dataQuery = new List<string>();
             DbfColumnGetter(path);
             dataQuery = DbfDataGetter(path, columnsName, columnType);
-            mySqlConnection = CreateConnection(ip, port, user, pass, dataBaseName);
+            /*mySqlConnection = CreateConnection(ip, port, user, pass, dataBaseName);*/
             foreach (string query in dataQuery) {
                 try {
 
-                    if (InitSqlCommand(query) == 1)
+                    System.IO.File.AppendAllText(@"C:\opt\" + Path.GetFileName(path).Replace(".dbf", "").Replace(".DBF", "") + "Inserts.sql", query+"\n");
+                    /*if (InitSqlCommand(query) == 1)
                     {
 
                     }
                     else {
                         MessageBox.Show("Error inserting data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
-                    }
-                    
-                    
-                    
-                    
+                    }*/
+
+
+
+
                 }
                 catch (Exception ex) {
                     Console.WriteLine("---------------");

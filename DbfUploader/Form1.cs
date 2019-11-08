@@ -78,7 +78,7 @@ namespace DbfUploader
 
             if (!txtDbName.Text.ToString().Equals(""))
             {
-                dbConnect.CreateDb(txtDbName.Text, txtIp.Text, txtPort.Text, txtUser.Text, txtPass.Text);
+                dbConnect.CreateDb(txtDbName.Text);
             }
 
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
@@ -88,7 +88,7 @@ namespace DbfUploader
                 {
                     string str = (string)checkedListBox1.Items[i];
                     //Console.WriteLine(str);
-                    dbConnect.CreateTables(txtIp.Text, txtPort.Text, txtUser.Text, txtPass.Text, txtDbName.Text, str);
+                    dbConnect.CreateTables(txtDbName.Text, str);
 
                 }
             }
@@ -125,45 +125,52 @@ namespace DbfUploader
 
             if (IsCheckedEmpty())
             {
+                using (frm = new frmWaitForm(CallCreateDataBase))
+                {
+                    frm.ShowDialog(this);
 
-                if (string.IsNullOrEmpty(txtDbName.Text))
+
+
+                }
+
+                /*if (string.IsNullOrEmpty(txtDbName.Text))
                 {
                     MessageBox.Show("You can't leave the input text 'Database name' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (string.IsNullOrEmpty(txtIp.Text))
-                {
-                    MessageBox.Show("You can't leave the input text 'Ip' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (string.IsNullOrEmpty(txtUser.Text))
-                {
-                    MessageBox.Show("You can't leave the input text 'User' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (string.IsNullOrEmpty(txtPass.Text))
-                {
-                    MessageBox.Show("You can't leave the input text 'Password' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                if (string.IsNullOrEmpty(txtPort.Text))
-                {
-                    MessageBox.Show("You can't leave the input text 'Port' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (!ValidateIPv4(txtIp.Text))
-                    {
-                        MessageBox.Show("Ip is not valid ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        using (frm = new frmWaitForm(CallCreateDataBase))
-                        {
-                            frm.ShowDialog(this);
+                }*/
+                /* if (string.IsNullOrEmpty(txtIp.Text))
+                 {
+                     MessageBox.Show("You can't leave the input text 'Ip' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 }
+                 if (string.IsNullOrEmpty(txtUser.Text))
+                 {
+                     MessageBox.Show("You can't leave the input text 'User' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 }
+                 if (string.IsNullOrEmpty(txtPass.Text))
+                 {
+                     MessageBox.Show("You can't leave the input text 'Password' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 }
+                 if (string.IsNullOrEmpty(txtPort.Text))
+                 {
+                     MessageBox.Show("You can't leave the input text 'Port' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 }*/
+                /* else
+                 {
+                     if (!ValidateIPv4(txtIp.Text))
+                     {
+                         MessageBox.Show("Ip is not valid ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     }
+                     else
+                     {
+                         using (frm = new frmWaitForm(CallCreateDataBase))
+                         {
+                             frm.ShowDialog(this);
 
 
 
-                        }
-                    }
+                         }
+                     }
 
-                }
+                 }*/
             }
             else {
                 MessageBox.Show("You must select a dbf ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -186,7 +193,7 @@ namespace DbfUploader
                     {
                         string str = (string)checkedListBox1.Items[i];
                         //Console.WriteLine(str);
-                        dbConnect.InsertData(txtIp.Text, txtPort.Text, txtUser.Text, txtPass.Text, txtDbName.Text, str);
+                        dbConnect.InsertData(txtDbName.Text, str);
                         
                     }
                 }
@@ -205,7 +212,7 @@ namespace DbfUploader
             if (IsCheckedEmpty())
             {
 
-                if (string.IsNullOrEmpty(txtDbName.Text))
+                /*if (string.IsNullOrEmpty(txtDbName.Text))
                 {
                     MessageBox.Show("You can't leave the input text 'Database name' empty ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -232,7 +239,7 @@ namespace DbfUploader
                         MessageBox.Show("Ip is not valid ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                    {
+                    {*/
                         using (frm = new frmWaitForm(CallInsertData))
                         {
                             frm.ShowDialog(this);
@@ -240,12 +247,12 @@ namespace DbfUploader
 
 
                         }
-                    }
+                /*            }
 
-                }
+                        }*/
             }
             else
-            {
+                {
                 MessageBox.Show("You must select a dbf ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
